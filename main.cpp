@@ -19,6 +19,8 @@ int main(int argc, char** argv)
     std::thread t(hello);
     t.join();
 
+    int b = 10;
+
     return 0;
 }
 

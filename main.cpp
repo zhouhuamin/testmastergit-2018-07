@@ -20,6 +20,7 @@ int main(int argc, char** argv)
     t.join();
 
     int a = 10;
+    int c = 10;
 
     return 0;
 }

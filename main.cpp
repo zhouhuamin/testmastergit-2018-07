@@ -17,6 +17,21 @@
 
 */
 
+1、Activity中获取：
+DisplayMetrics metrics = new DisplayMetrics();
+getWindowManager().getDefaultDisplay().getMetrics(metrics);
+int width = metrics.widthPixels;
+int height = metrics.heightPixels;
+此时获取到的是该Activity的实际占屏尺寸
+
+2、上下文获取：
+DisplayMetrics metrics = new DisplayMetrics();
+metrics = getApplicationContext().getResources().getDisplayMetrics();
+int width = metrics.widthPixels;int height = metrics.heightPixels;
+此时获取到的是系统的显示尺寸
+
+
+
 
 #include <cstdlib>
 #include <iostream>

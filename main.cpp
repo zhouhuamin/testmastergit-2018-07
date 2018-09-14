@@ -57,3 +57,93 @@ int main(int argc, char** argv)
     return 0;
 }
 
+#include <cstdlib>
+#include <string>
+#include <string.h>
+
+using namespace std;
+
+
+void print_buffer_id(int id)
+{
+    FILE *fp = NULL;
+    fp = fopen("/sdcard/apitrace/texturedata.data", "a+");
+    if (fp == NULL)
+        return;
+    
+    char szTmpData[10 + 1] = {0};
+    std::string strLogData = "";
+    {
+        memset(szTmpData, 0x00, 11);
+        sprintf(szTmpData, "%d ", id);
+        strLogData += szTmpData;
+        {
+            // write file
+            strLogData += "\n";
+            fwrite(strLogData.c_str(), 1, strLogData.size(), fp);
+            strLogData = "";
+        }
+    }    
+    fclose(fp);
+}
+
+void print_buffer_data(int nLen, char *pBuffer)
+{
+    FILE *fp = NULL;
+    fp = fopen("/sdcard/apitrace/texturedata.data", "a+");
+    if (fp == NULL)
+        return;
+    
+    char szTmpData[5 + 1] = {0};
+    std::string strLogData = "";
+    for (int i = 0; i < nLen; ++i)
+    {
+        memset(szTmpData, 0x00, 5);
+        sprintf(szTmpData, "%02X ", (unsigned char)pBuffer[i]);
+        strLogData += szTmpData;
+        if (i + 1 % 16 == 0)
+        {
+            // write file
+            strLogData += "\n";
+            fwrite(strLogData.c_str(), 1, strLogData.size(), fp);
+            strLogData = "";
+        }
+    }    
+    if (!strLogData.empty())
+    {
+        // write file
+        strLogData += "\n";
+        fwrite(strLogData.c_str(), 1, strLogData.size(), fp);
+        strLogData = "";
+    }
+    fclose(fp);
+}
+
+/*
+ * 
+ */
+int main(int argc, char** argv)
+{
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

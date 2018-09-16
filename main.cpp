@@ -101,7 +101,7 @@ void print_buffer_data(int nLen, char *pBuffer)
         memset(szTmpData, 0x00, 5);
         sprintf(szTmpData, "%02X ", (unsigned char)pBuffer[i]);
         strLogData += szTmpData;
-        if (i + 1 % 16 == 0)
+        if ((i + 1) % 16 == 0)
         {
             // write file
             strLogData += "\n";

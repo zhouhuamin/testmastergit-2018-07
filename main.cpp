@@ -36,6 +36,7 @@ int width = metrics.widthPixels;int height = metrics.heightPixels;
 #include <cstdlib>
 #include <iostream>
 #include <thread>
+#include <memory>
 
 using namespace std;
 

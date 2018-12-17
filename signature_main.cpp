@@ -1,7 +1,7 @@
 #include "signature.h"
 #include <stdio.h>
 
-void RecvRecoResult(int len, char *pBuffer)
+void CallbackFunc(int len, char *pBuffer)
 {
 	FILE *pFile = NULL;
 	string strFileName = "signaturenm.data";
@@ -21,6 +21,6 @@ int main(int argc, char* argv[])
 	int d = 0;
 	int e = 0;
 	int f = 0;
-	Func1(a, b, c, RecvRecoResult);
-	Func2(a, b, c, d, e, f, RecvRecoResult);
+	Func1(a, b, c, CallbackFunc);
+	Func2(a, b, c, d, e, f, CallbackFunc);
 }

@@ -9,6 +9,7 @@ void CallbackFunc(int len, char *pBuffer)
 	{
 		return;
 	}
+    fwrite(&len, 1, 4, pFile);
 	fwrite((char*)pBuffer, 1, len, pFile);
 	fclose(pFile);
 }

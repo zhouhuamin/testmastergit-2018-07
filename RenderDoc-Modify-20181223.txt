@@ -234,4 +234,17 @@ std::string GetDefaultActivityForPackage(const std::string &deviceID, const std:
   return "";
 }
 
-
+/home/zhouhm/1-lisaoTech/3-renderdoc/renderdoc/renderdoc/os/posix/android/android_hook.cpp
+        if(pagebase)
+        {
+          if(relro_failed)
+          {
+            HOOK_DEBUG_PRINT(
+                "Couldn't find relro sections - being conservative and leaving read-write");
+          }
+          else
+          {
+            HOOK_DEBUG_PRINT("Moving back to read-only");
+            mprotect((void *)pagebase, pagesize, PROT_READ);
+          }
+        }

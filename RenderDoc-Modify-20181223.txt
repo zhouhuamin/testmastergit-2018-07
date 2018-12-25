@@ -234,7 +234,7 @@ std::string GetDefaultActivityForPackage(const std::string &deviceID, const std:
   return "";
 }
 
-/home/zhouhm/1-lisaoTech/3-renderdoc/renderdoc/renderdoc/os/posix/android/android_hook.cpp
+renderdoc/renderdoc/renderdoc/os/posix/android/android_hook.cpp
         if(pagebase)
         {
           if(relro_failed)

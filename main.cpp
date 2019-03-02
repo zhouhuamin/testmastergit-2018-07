@@ -1,3 +1,5 @@
+addr2line -C -e libVkLayer_GLES_RenderDoc.so -f 0x001579cf
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -36,6 +38,7 @@ int width = metrics.widthPixels;int height = metrics.heightPixels;
 #include <cstdlib>
 #include <iostream>
 #include <thread>
+#include <memory>
 
 using namespace std;
 
@@ -124,7 +127,7 @@ void print_buffer_data(int nLen, char *pBuffer)
  */
 int main(int argc, char** argv)
 {
-
+    // sdfjdkjflk
     return 0;
 }
 

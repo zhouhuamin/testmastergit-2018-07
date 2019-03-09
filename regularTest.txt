@@ -1,0 +1,10 @@
+echo "$STR" | grep -o "[^ ]\+\( \+[^ ]\+\)*"
+
+"\( \+[($]\)"
+
+
+grep -E -r "(gl|egl).+.\(" gltxt.txt -o|sed 's/($//'|sort -n|uniq -c
+echo "   abc   def   " | sed 's/^ *\| *$//g'
+
+
+

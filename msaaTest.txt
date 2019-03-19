@@ -2,3 +2,23 @@
 void WrappedOpenGL::glFramebufferTexture2DMultisampleEXT(GLenum target, GLenum attachment,
                                                          GLenum textarget, GLuint texture,
                                                          GLint level, GLsizei samples)
+
+
+
+AndroidSDK/android-ndk-r14b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin$ ./arm-linux-androideabi-readelf -s  /libGLESv2.so|grep glFramebufferTexture2DM
+   397: 0000ccb4    20 FUNC    GLOBAL DEFAULT   13 glFramebufferTexture2DMul
+   676: 0000c6e0    20 FUNC    GLOBAL DEFAULT   13 glFramebufferTexture2DMul
+AndroidSDK/android-ndk-r14b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin$ ./arm-linux-androideabi-readelf -s  /libGLESv2.so|grep glFramebufferTexture2DMu
+   397: 0000ccb4    20 FUNC    GLOBAL DEFAULT   13 glFramebufferTexture2DMul
+   676: 0000c6e0    20 FUNC    GLOBAL DEFAULT   13 glFramebufferTexture2DMul
+AndroidSDK/android-ndk-r14b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin$ ./arm-linux-androideabi-readelf -s  /libGLESv2.so|grep glFramebufferTexture2DMul
+   397: 0000ccb4    20 FUNC    GLOBAL DEFAULT   13 glFramebufferTexture2DMul
+   676: 0000c6e0    20 FUNC    GLOBAL DEFAULT   13 glFramebufferTexture2DMul
+AndroidSDK/android-ndk-r14b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin$ ll
+./arm-linux-androideabi-nm: supported targets: elf32-littlearm elf32-bigarm elf32-little elf32-big plugin srec symbolsrec verilog tekhex binary ihex
+AndroidSDK/android-ndk-r14b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin$ ./arm-linux-androideabi-nm -D  /libGLESv2.so|grep glFramebufferTexture2DMul
+0000c6e0 T glFramebufferTexture2DMultisampleEXT
+0000ccb4 T glFramebufferTexture2DMultisampleIMG
+AndroidSDK/android-ndk-r14b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin$ 
+
+

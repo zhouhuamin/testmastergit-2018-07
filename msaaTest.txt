@@ -1,0 +1,4 @@
+
+void WrappedOpenGL::glFramebufferTexture2DMultisampleEXT(GLenum target, GLenum attachment,
+                                                         GLenum textarget, GLuint texture,
+                                                         GLint level, GLsizei samples)

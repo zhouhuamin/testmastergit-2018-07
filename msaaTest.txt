@@ -21,4 +21,7 @@ AndroidSDK/android-ndk-r14b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-
 0000ccb4 T glFramebufferTexture2DMultisampleIMG
 AndroidSDK/android-ndk-r14b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin$ 
 
+GLenum glCheckFramebufferStatus( GLenum target);
+
+GLenum glCheckNamedFramebufferStatus(GLuint framebuffer,GLenum target);
 

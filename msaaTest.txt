@@ -53,5 +53,20 @@ void WrappedOpenGL::glFramebufferTexture2DMultisampleEXT(GLenum target, GLenum a
     <ResourceId name="buffer" typename="GLResource" width="8" string="ResourceId::3480">3480</ResourceId>
     </chunk>
 
+colordiff -u gl_dispatch_table.h ../15-renderdoc-test-py/gl_dispatch_table.h 
+--- gl_dispatch_table.h	2019-03-23 09:20:33.149872596 +0800
++++ ../15-renderdoc-test-py/gl_dispatch_table.h	2018-11-02 20:24:43.931560836 +0800
+@@ -312,8 +312,7 @@
+   PFNGLDELETEFRAMEBUFFERSPROC glDeleteFramebuffers;      // aliases glDeleteFramebuffersEXT
+   PFNGLGENRENDERBUFFERSPROC glGenRenderbuffers;          // aliases glGenRenderbuffersEXT
+   PFNGLRENDERBUFFERSTORAGEPROC glRenderbufferStorage;    // aliases glRenderbufferStorageEXT
+-  PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC glRenderbufferStorageMultisample;
+-  PFNGLRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC glRenderbufferStorageMultisampleEXT;
++  PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC glRenderbufferStorageMultisample;    // aliases glRenderbufferStorageMultisampleEXT
+   PFNGLDELETERENDERBUFFERSPROC glDeleteRenderbuffers;    // aliases glDeleteRenderbuffersEXT
+   PFNGLBINDRENDERBUFFERPROC glBindRenderbuffer;          // aliases glBindRenderbufferEXT
+   PFNGLFENCESYNCPROC glFenceSync;
+
+
 
 

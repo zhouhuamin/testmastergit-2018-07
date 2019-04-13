@@ -32,9 +32,6 @@ metrics = getApplicationContext().getResources().getDisplayMetrics();
 int width = metrics.widthPixels;int height = metrics.heightPixels;
 此时获取到的是系统的显示尺寸
 
-
-
-
 #include <cstdlib>
 #include <iostream>
 #include <thread>

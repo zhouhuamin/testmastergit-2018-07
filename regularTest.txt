@@ -7,4 +7,6 @@ grep -E -r "(gl|egl).+.\(" gltxt.txt -o|sed 's/($//'|sort -n|uniq -c
 echo "   abc   def   " | sed 's/^ *\| *$//g'
 
 awk -F '(' '{print $1}' gltxt.txt
-
+grep -P  "e?gl.+(?=\()" test-005.txt|awk '{print $1}'
+grep -P  "e?gl.+(?=\()" test-005.txt|cut -d " " -f 1
+grep -P  "e?gl.+(?=\()" test-005.txt|cut -d "(" -f 1 

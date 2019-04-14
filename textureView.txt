@@ -1,0 +1,6 @@
+void TextureViewer::OnEventChanged(uint32_t eventId)
+{
+  // add by zhouhm
+  on_saveTex_clicked();
+  // add end
+}

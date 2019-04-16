@@ -4,3 +4,146 @@ void TextureViewer::OnEventChanged(uint32_t eventId)
   on_saveTex_clicked();
   // add end
 }
+
+
+int WrappedOpenGL::SnapshotDraw()
+{
+  // add by zhouhm
+  {
+      const uint16_t maxSize = 2048;
+      RenderDoc::FramePixels *fp = new RenderDoc::FramePixels();
+
+      if(GL.glGetIntegerv && GL.glReadBuffer && GL.glBindFramebuffer && GL.glBindBuffer &&
+         GL.glReadPixels)
+      {
+        RDCGLenum prevReadBuf = eGL_BACK;
+        GLint prevBuf = 0;
+        GLint packBufBind = 0;
+        GLint prevPackRowLen = 0;
+        GLint prevPackSkipRows = 0;
+        GLint prevPackSkipPixels = 0;
+        GLint prevPackAlignment = 0;
+        GL.glGetIntegerv(eGL_READ_BUFFER, (GLint *)&prevReadBuf);
+        GL.glGetIntegerv(eGL_READ_FRAMEBUFFER_BINDING, &prevBuf);
+        GL.glGetIntegerv(eGL_PIXEL_PACK_BUFFER_BINDING, &packBufBind);
+        GL.glGetIntegerv(eGL_PACK_ROW_LENGTH, &prevPackRowLen);
+        GL.glGetIntegerv(eGL_PACK_SKIP_ROWS, &prevPackSkipRows);
+        GL.glGetIntegerv(eGL_PACK_SKIP_PIXELS, &prevPackSkipPixels);
+        GL.glGetIntegerv(eGL_PACK_ALIGNMENT, &prevPackAlignment);
+
+        GL.glBindFramebuffer(eGL_READ_FRAMEBUFFER, m_CurrentDefaultFBO);
+        GL.glReadBuffer(eGL_BACK);
+        GL.glBindBuffer(eGL_PIXEL_PACK_BUFFER, 0);
+        GL.glPixelStorei(eGL_PACK_ROW_LENGTH, 0);
+        GL.glPixelStorei(eGL_PACK_SKIP_ROWS, 0);
+        GL.glPixelStorei(eGL_PACK_SKIP_PIXELS, 0);
+        GL.glPixelStorei(eGL_PACK_ALIGNMENT, 1);
+
+        ContextData &dat = GetCtxData();
+        dat.initParams.width = 1080;
+        dat.initParams.height = 2160;
+
+        fp->width = dat.initParams.width;
+        fp->height = dat.initParams.height;
+        fp->bpc = 1;
+        fp->stride = fp->bpc * 4;
+        fp->pitch = dat.initParams.width * fp->stride;
+        fp->max_width = maxSize;
+        fp->pitch_requirement = 4;
+        fp->len = (uint32_t)fp->pitch * fp->height;
+        fp->data = new uint8_t[fp->len];
+        fp->is_y_flipped = dat.initParams.isYFlipped;
+
+        // GLES only supports GL_RGBA
+        GL.glReadPixels(0, 0, fp->width, fp->height, eGL_RGBA, eGL_UNSIGNED_BYTE, fp->data);
+
+        GL.glBindBuffer(eGL_PIXEL_PACK_BUFFER, packBufBind);
+        GL.glBindFramebuffer(eGL_READ_FRAMEBUFFER, prevBuf);
+        GL.glReadBuffer(prevReadBuf);
+        GL.glPixelStorei(eGL_PACK_ROW_LENGTH, prevPackRowLen);
+        GL.glPixelStorei(eGL_PACK_SKIP_ROWS, prevPackSkipRows);
+        GL.glPixelStorei(eGL_PACK_SKIP_PIXELS, prevPackSkipPixels);
+        GL.glPixelStorei(eGL_PACK_ALIGNMENT, prevPackAlignment);
+      }
+
+      //if (type == 1)
+      {
+        RDCThumb outRaw, outPng;
+        if(fp->data)
+        {
+          // point sample info into raw buffer
+           RenderDoc::Inst().ResamplePixels(*fp, outRaw);
+           RenderDoc::Inst().EncodePixelsPNG(outRaw, outPng);
+
+           BinaryThumbnail2 thumbHeader = {0};
+
+           thumbHeader.width = outPng.width;
+           thumbHeader.height = outPng.height;
+           const byte *jpgPixels = outPng.pixels;
+           thumbHeader.length = outPng.len;
+
+           byte *jpgBuffer = NULL;
+           if(outPng.format != FileType::JPG && outPng.width > 0 && outPng.height > 0)
+          {
+            // the primary thumbnail must be in JPG format, must perform conversion
+            const byte *rawPixels = NULL;
+            byte *rawBuffer = NULL;
+            int w = (int)outPng.width;
+            int h = (int)outPng.height;
+            int comp = 3;
+
+            if(outPng.format == FileType::Raw)
+            {
+  	        rawPixels = outPng.pixels;
+            }
+            else
+            {
+  	        rawBuffer = stbi_load_from_memory(outPng.pixels, (int)outPng.len, &w, &h, &comp, 3);
+  	        rawPixels = rawBuffer;
+            }
+
+            if(rawPixels)
+            {
+  	        int len = w * h * comp;
+  	        jpgBuffer = new byte[len];
+  	        jpge::params p;
+  	        p.m_quality = 90;
+  	        jpge::compress_image_to_jpeg_file_in_memory(jpgBuffer, len, w, h, comp, rawPixels, p);
+  	        thumbHeader.length = (uint32_t)len;
+  	        jpgPixels = jpgBuffer;
+            }
+            else
+            {
+  	        thumbHeader.width = 0;
+  	        thumbHeader.height = 0;
+  	        thumbHeader.length = 0;
+  	        jpgPixels = NULL;
+            }
+            if(rawBuffer)
+  	        stbi_image_free(rawBuffer);
+          }
+
+          {
+  	        if (thumbHeader.length > 0)
+  	        {
+  		          static int nSeq = 0;
+  		          char szFileName[256] = {0};
+  		          snprintf(szFileName, sizeof(szFileName),"E:\\pics\\%d.png", nSeq++);
+                  //  snprintf(szFileName, sizeof(szFileName), "/sdcard/apitrace/%d.png", nSeq++);
+  		          FILE *pFile = FileIO::fopen(szFileName, "wb");
+  		          FileIO::fwrite(jpgPixels, 1, thumbHeader.length, pFile);
+  		          FileIO::fclose(pFile);
+  	        }
+
+  	        delete[] jpgBuffer;
+          }
+          SAFE_DELETE_ARRAY(outRaw.pixels);
+          SAFE_DELETE_ARRAY(outPng.pixels);
+        }
+      }
+  }
+  // add end
+    return 1;
+}
+
+

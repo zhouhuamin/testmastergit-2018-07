@@ -129,7 +129,7 @@ int WrappedOpenGL::SnapshotDraw()
   		          static int nSeq = 0;
   		          char szFileName[256] = {0};
   		          snprintf(szFileName, sizeof(szFileName),"E:\\pics\\%d.png", nSeq++);
-                  //  snprintf(szFileName, sizeof(szFileName), "/sdcard/apitrace/%d.png", nSeq++);
+                  //  snprintf(szFileName, sizeof(szFileName), "/%d.png", nSeq++);
   		          FILE *pFile = FileIO::fopen(szFileName, "wb");
   		          FileIO::fwrite(jpgPixels, 1, thumbHeader.length, pFile);
   		          FileIO::fclose(pFile);

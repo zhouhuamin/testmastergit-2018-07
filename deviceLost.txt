@@ -1,0 +1,10 @@
+
+void QVulkanWindowRenderer::logicalDeviceLost()
+This virtual function is called when the logical device (VkDevice) is lost, meaning some operation failed with VK_ERROR_DEVICE_LOST.
+
+The default implementation is empty.
+
+There is typically no need to perform anything special in this function. QVulkanWindow will automatically release all resources (invoking releaseSwapChainResources() and releaseResources() as necessary) and will attempt to reinitialize, acquiring a new device. When the physical device was also lost, this reinitialization attempt may then result in physicalDeviceLost().
+
+See also physicalDeviceLost().
+

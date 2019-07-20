@@ -1,4 +1,4 @@
-glDrawBuffers
+4 glDrawBuffers
 2 glFramebufferRenderbuffer
 3 glFramebufferTexture2D
 1 glFramebufferTexture2DMultisampleEXT

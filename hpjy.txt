@@ -1,0 +1,11 @@
+glDrawBuffers
+2 glFramebufferRenderbuffer
+3 glFramebufferTexture2D
+1 glFramebufferTexture2DMultisampleEXT
+4 glGenFramebuffers
+1 glGenRenderbuffers
+3 glPolygonOffset
+1 glRenderbufferStorageMultisample
+10 glVertexAttribDivisor
+3 glViewport
+

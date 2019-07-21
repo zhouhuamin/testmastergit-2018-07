@@ -10,4 +10,5 @@ grep -P  "e?gl.+(?=\()" test-005.txt|awk '{print $1}'
 grep -P  "e?gl.+(?=\()" test-005.txt|cut -d " " -f 1
 grep -P  "e?gl.+(?=\()" test-005.txt|cut -d "(" -f 1 
 egrep -o 'e?gl[A-Z][A-Za-z0-9]+' 113.xml |sort -n|uniq -c
+sort|uniq -c|sort -nk 1
 

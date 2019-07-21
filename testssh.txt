@@ -1,0 +1,6 @@
+ssh user@host "export DISPLAY=:0 ; command1; command2"""
+ssh -X user@host "command1; command2"
+
+
+
+

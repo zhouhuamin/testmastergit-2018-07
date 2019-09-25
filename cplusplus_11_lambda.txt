@@ -1,0 +1,77 @@
+c++11之lambda表达式简介
+1. lambda表达式的优点:
+        生命式编程风格
+        简洁
+        灵活
+
+2. lambda表达式语法：
+    [capture] (params) opt -> ret { body;};
+    capture: 捕获列表
+    params:  参数表
+    opt:     函数选项
+    ret:     返回值类型:mutable 或 exception 声明
+    body:    函数体
+    
+3. 例子
+    []        //未定义变量. 不捕获任何变量, 试图在Lambda内使用任何外部变量都是错误的.
+    [x, &y]   //x 按值捕获, y 按引用捕获.
+    [&]       //用到的任何外部变量都隐式按引用捕获
+    [=]       //用到的任何外部变量都隐式按值捕获
+    [&, x]    //x显式地按值捕获. 其它变量按引用捕获
+    [=, &z]   //z按引用捕获. 其它变量按值捕获
+3.1 求偶数个数的例子
+    c++11之前的代码:
+      1 #include <iostream>
+      2 #include <vector>
+      3 #include <algorithm>
+      4 
+      5 class CountEven
+      6 {
+      7         int& count_;
+      8 
+      9 public:
+     10         CountEven(int& count) : count_(count){}
+     11 
+     12         void operator()(int val)
+     13         {
+     14                 if (!(val & 1))
+     15                 {
+     16                         ++count_;
+     17                 }
+     18         }
+     19 };
+     20 
+     21 
+     22 int main(void)
+     23 {
+     24         std::vector<int> v = { 1, 2, 3, 4, 5, 6 };
+     25         int even_count = 0;
+     26 
+     27         std::for_each(v.begin(), v.end(), CountEven(even_count));
+     28         std::cout << "The number of even is " << even_count << std::endl;
+     29 
+     30         return 0;
+     31 }
+    用lambda表达式之后，代码如下:
+      1  #include <iostream>
+      2 #include <vector>
+      3 #include <algorithm>
+      4 
+     22 int main(void)
+     23 {
+     24         std::vector<int> v = { 1, 2, 3, 4, 5, 6 };
+     25         int even_count = 0;
+     26 
+     27         std::for_each(v.begin(), v.end(), [&even_count](int val)
+     28         {
+     29             if (!(val & 1)) {
+     30                 ++even_count;
+     31             }
+     32         });
+     33         std::cout << "The number of even is " << even_count << std::endl;
+     34 
+     35         system("pause");
+     36         return 0;
+     37 }
+4. 总结
+    lambda表达式的价值在于，就地封装短小的功能闭包，可以方便地表达出我们希望执行的具体操作.

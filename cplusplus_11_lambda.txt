@@ -70,8 +70,7 @@ c++11之lambda表达式简介
      32         });
      33         std::cout << "The number of even is " << even_count << std::endl;
      34 
-     35         system("pause");
-     36         return 0;
-     37 }
+     35         return 0;
+     36 }
 4. 总结
     lambda表达式的价值在于，就地封装短小的功能闭包，可以方便地表达出我们希望执行的具体操作.

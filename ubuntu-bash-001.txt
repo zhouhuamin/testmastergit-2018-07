@@ -1,0 +1,9 @@
+ 可以先备份~/.bashrc
+ 打开 ~/.bashrc
+ 找到：
+
+ PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+ 1
+ 修改将小写w改为大写W保存
+ 执行source ~/.bashrc
+ ubuntu bash显示相对路径

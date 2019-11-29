@@ -90,3 +90,15 @@ long　　　　    jlong　　　　  64
 float　　　     jfloat　　　   32
 double　　　    jdouble　　　  64
 void　　　　    void　　　　   n/a　
+
+创建一个可供Java代码调用的本地函数的步骤如下：
+1. 将需要本地实现的Java方法加上native声明；
+2. 使用javac命令编译Java类；
+3. 使用javah生成.h头文件
+4. 在本地代码中实现native方法；
+5. 编译上述的本地方法，生成动态链接库
+6. 在Java类中加载这一动态链接库
+7. Java代码中的其它地方可以正常调用这一native方法。
+
+
+

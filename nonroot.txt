@@ -1,0 +1,43 @@
+1. Android.mk
+include $(CLEAR_VARS)
+    LOCAL_MODULE := GLES_mgd
+    LOCAL_SRC_FILES :=libGLES_mgd.so
+include $(PREBUILT_SHARED_LIBRARY)
+
+
+2. app create
+    System.loadLibrary( "GLES_mgd" );
+    //System.loadLibrary( "VkLayer_GLES_RenderDoc" );
+
+3. header
+#include "renderdoc_app.h"
+#include <dlfcn.h>
+#include <stdio.h>
+
+4. templateAppInit
+char szBuffer[256] = {0};
+FILE *pfile = fopen("/sdcard/apitrace/log-001.txt", "ab+");
+// At init, on linux/android.
+// For android replace librenderdoc.so with libVkLayer_GLES_RenderDoc.so
+if(void *mod = dlopen("libVkLayer_GLES_RenderDoc.so", RTLD_NOW))
+{
+    pRENDERDOC_GetAPI RENDERDOC_GetAPI = (pRENDERDOC_GetAPI)dlsym(mod, "RENDERDOC_GetAPI");
+    int ret = RENDERDOC_GetAPI(eRENDERDOC_API_Version_1_4_0, (void **)&rdoc_api);
+    printf("process templateAppInit...ret=%d\n", ret);
+    {
+        sprintf(szBuffer, "ret=%d\n", ret);
+        if (pfile)
+            fwrite(szBuffer, 1, sizeof(szBuffer), pfile);
+    }
+    assert(ret == 1);
+}
+sprintf(szBuffer, "mod=3\n");
+if (pfile) {
+    fwrite(szBuffer, 1, sizeof(szBuffer), pfile);
+    fclose(pfile);
+
+5. permission
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+6. modify swapbuffers
+

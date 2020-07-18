@@ -1,0 +1,29 @@
+1、./gradlew -v来查看下项目所用的Gradle版本
+
+可以看到对应gradle版本信息
+
+
+
+2、./gradlew clean
+
+将会去下载Gradle的一些依赖包
+
+
+
+3、./gradlew build
+
+来进行编译生成apk
+
+
+
+其他
+
+./gradlew assembleDebug
+
+编译并打Debug包
+
+./gradlew assembleRelease
+
+编译并打Release的包
+
+Android Studio 命令行Gradle编译

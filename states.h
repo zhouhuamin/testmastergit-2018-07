@@ -128,7 +128,6 @@ struct VertexArrayInfo
 };
 typedef std::vector<VertexArrayInfo> VertexArray_t;
 
-
 struct ProgramInfo
 {
     ProgramInfo(GLuint _id, bool lazy = false);

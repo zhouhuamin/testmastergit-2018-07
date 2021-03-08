@@ -55,5 +55,72 @@ void main()
         cout << array2[i] << endl;
 }
 
+#include <iostream>
+using namespace std;
+
+int a[3][3] = {1,2,3,4,5,6,7,8,9};
+
+int main()
+{
+    int row = sizeof(a) / sizeof(a[0]);//行数
+    int col = sizeof(a[0]) / sizeof(a[0][0]);//列数
+
+    int b[row*col];
+    int cnt=0;
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j<col; j++)
+        {
+            b[cnt]=a[i][j];
+            cnt++;
+        }
+    }
+
+    for(int k = 0;k < cnt; k++)
+    {
+        cout<<b[k]<<" ";
+    }
+    return 0;
+}
+#include <iostream>
+using namespace std;
+
+int a[3][3] = {1,2,3,4,5,6,7,8,9};
+
+int main()
+{
+    int row = sizeof(a) / sizeof(a[0]);//行数
+    int col = sizeof(a[0]) / sizeof(a[0][0]);//列数
+    int * p = a[0];
+
+    for(int i = 0; i < row * col; i++)
+    {
+        cout<<*p++<<endl;
+    }
+
+    return 0;
+}
+
+
+double* MatrixAlgorithm::OneDimtoTwoDim(double** dFMatrix,int itime)
+{
+    double* OneMatrix;
+    OneArrayAllocation pT;
+    OneMatrix=pT.OneArrayDoubleAlloc(nDimension);
+
+    for(int ipoin=0;ipoin<nDimension;ipoin++)
+    {
+        OneMatrix[ipoin]=dFMatrix[ipoin][itime];
+        cout<<"OneMatrix["<<ipoin<<"]="<<OneMatrix[ipoin]<<endl;
+        exit(0);
+    }
+    return(OneMatrix);
+}
+
+
+
+
+
+
 
 

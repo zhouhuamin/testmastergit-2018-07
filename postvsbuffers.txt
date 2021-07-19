@@ -1,0 +1,12 @@
+ 	renderdoc.dll!GLReplay::InitPostVSBuffers(unsigned int eventId) 行 215	C++
+ 	renderdoc.dll!ReplayController::GetPostVSData(unsigned int instID, unsigned int viewID, MeshDataStage stage) 行 492	C++
+ 	qrenderdoc.exe!BufferViewer::OnEventChanged::__l2::<lambda>(IReplayController * r) 行 2629	C++
+ 	[外部代码]	
+ 	qrenderdoc.exe!ReplayManager::run(int proxyRenderer, const QString & capturefile, const ReplayOptions & opts, std::function<void __cdecl(float)> progress) 行 496	C++
+>	qrenderdoc.exe!ReplayManager::OpenCapture::__l2::<lambda>() 行 56	C++
+ 	[外部代码]	
+ 	qrenderdoc.exe!LambdaThread::process() 行 346	C++
+ 	qrenderdoc.exe!QtPrivate::FunctorCall<QtPrivate::IndexesList<>,QtPrivate::List<>,void,void (__cdecl LambdaThread::*)(void)>::call(void(LambdaThread::*)() f, LambdaThread * o, void * * arg) 行 136	C++
+ 	qrenderdoc.exe!QtPrivate::FunctionPointer<void (__cdecl LambdaThread::*)(void)>::call<QtPrivate::List<>,void>(void(LambdaThread::*)() f, LambdaThread * o, void * * arg) 行 170	C++
+ 	qrenderdoc.exe!QtPrivate::QSlotObject<void (__cdecl LambdaThread::*)(void),QtPrivate::List<>,void>::impl(int which, QtPrivate::QSlotObjectBase * this_, QObject * r, void * * a, bool * ret) 行 121	C++
+

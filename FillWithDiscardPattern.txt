@@ -1,0 +1,18 @@
+>	renderdoc.dll!GLReplay::FillWithDiscardPattern(DiscardType type, unsigned int framebuffer, int numAttachments, const RDCGLenum * attachments, int x, int y, int width, int height) 行 1357	C++
+ 	renderdoc.dll!WrappedOpenGL::Serialise_glInvalidateNamedFramebufferData<ReadSerialiser>(ReadSerialiser & ser, unsigned int framebufferHandle, int numAttachments, const RDCGLenum * attachments) 行 1777	C++
+ 	renderdoc.dll!WrappedOpenGL::ProcessChunk(ReadSerialiser & ser, GLChunk chunk) 行 4043	C++
+ 	renderdoc.dll!WrappedOpenGL::ContextProcessChunk(ReadSerialiser & ser, GLChunk chunk) 行 5300	C++
+ 	renderdoc.dll!WrappedOpenGL::ContextReplayLog(CaptureState readType, unsigned int startEventID, unsigned int endEventID, bool partial) 行 5211	C++
+ 	renderdoc.dll!WrappedOpenGL::ReadLogInitialisation(RDCFile * rdc, bool storeStructuredBuffers) 行 3435	C++
+ 	renderdoc.dll!GLReplay::ReadLogInitialisation(RDCFile * rdc, bool storeStructuredBuffers) 行 93	C++
+ 	renderdoc.dll!ReplayController::PostCreateInit(IReplayDriver * device, RDCFile * rdc) 行 2012	C++
+ 	renderdoc.dll!ReplayController::CreateDevice(RDCFile * rdc, const ReplayOptions & opts) 行 1985	C++
+ 	renderdoc.dll!CaptureFile::OpenCapture(const ReplayOptions & opts, std::function<void __cdecl(float)> progress) 行 367	C++
+ 	qrenderdoc.exe!ReplayManager::run(int proxyRenderer, const QString & capturefile, const ReplayOptions & opts, std::function<void __cdecl(float)> progress) 行 440	C++
+ 	qrenderdoc.exe!ReplayManager::OpenCapture::__l2::<lambda>() 行 56	C++
+ 	[外部代码]	
+ 	qrenderdoc.exe!LambdaThread::process() 行 340	C++
+ 	qrenderdoc.exe!QtPrivate::FunctorCall<QtPrivate::IndexesList<>,QtPrivate::List<>,void,void (__cdecl LambdaThread::*)(void)>::call(void(LambdaThread::*)() f, LambdaThread * o, void * * arg) 行 136	C++
+ 	qrenderdoc.exe!QtPrivate::FunctionPointer<void (__cdecl LambdaThread::*)(void)>::call<QtPrivate::List<>,void>(void(LambdaThread::*)() f, LambdaThread * o, void * * arg) 行 170	C++
+ 	qrenderdoc.exe!QtPrivate::QSlotObject<void (__cdecl LambdaThread::*)(void),QtPrivate::List<>,void>::impl(int which, QtPrivate::QSlotObjectBase * this_, QObject * r, void * * a, bool * ret) 行 121	C++
+

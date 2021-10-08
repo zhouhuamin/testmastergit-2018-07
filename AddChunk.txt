@@ -1,0 +1,341 @@
+1.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+ 	renderdoc.dll!WrappedOpenGL::ActivateContext(GLWindowingData winData) 行 1516	C++
+ 	renderdoc.dll!eglMakeCurrent_renderdoc_hooked(void * display, void * draw, void * read, void * ctx) 行 492	C++
+>	Simple_Texture2D.exe!esCreateWindow(ESContext * esContext, const char * title, int width, int height, unsigned int flags) 行 240	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+
+2.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::ActivateContext(GLWindowingData winData) 行 1525	C++
+ 	renderdoc.dll!eglMakeCurrent_renderdoc_hooked(void * display, void * draw, void * read, void * ctx) 行 492	C++
+ 	Simple_Texture2D.exe!esCreateWindow(ESContext * esContext, const char * title, int width, int height, unsigned int flags) 行 240	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+3.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+ 	renderdoc.dll!WrappedOpenGL::glGenBuffers(int n, unsigned int * buffers) 行 127	C++
+>	renderdoc.dll!WrappedOpenGL::ActivateContext(GLWindowingData winData) 行 1580	C++
+ 	renderdoc.dll!eglMakeCurrent_renderdoc_hooked(void * display, void * draw, void * read, void * ctx) 行 492	C++
+ 	Simple_Texture2D.exe!esCreateWindow(ESContext * esContext, const char * title, int width, int height, unsigned int flags) 行 240	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+
+4.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+ 	renderdoc.dll!WrappedOpenGL::glObjectLabel(RDCGLenum identifier, unsigned int name, int length, const char * label) 行 209	C++
+>	renderdoc.dll!WrappedOpenGL::ActivateContext(GLWindowingData winData) 行 1596	C++
+ 	renderdoc.dll!eglMakeCurrent_renderdoc_hooked(void * display, void * draw, void * read, void * ctx) 行 492	C++
+ 	Simple_Texture2D.exe!esCreateWindow(ESContext * esContext, const char * title, int width, int height, unsigned int flags) 行 240	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+5.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+ 	renderdoc.dll!WrappedOpenGL::glBindBuffer(RDCGLenum target, unsigned int buffer) 行 374	C++
+>	renderdoc.dll!WrappedOpenGL::ActivateContext(GLWindowingData winData) 行 1585	C++
+ 	renderdoc.dll!eglMakeCurrent_renderdoc_hooked(void * display, void * draw, void * read, void * ctx) 行 492	C++
+ 	Simple_Texture2D.exe!esCreateWindow(ESContext * esContext, const char * title, int width, int height, unsigned int flags) 行 240	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+6.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glBufferData(RDCGLenum target, __int64 size, const void * data, RDCGLenum usage) 行 931	C++
+ 	renderdoc.dll!WrappedOpenGL::ActivateContext(GLWindowingData winData) 行 1591	C++
+ 	renderdoc.dll!eglMakeCurrent_renderdoc_hooked(void * display, void * draw, void * read, void * ctx) 行 492	C++
+ 	Simple_Texture2D.exe!esCreateWindow(ESContext * esContext, const char * title, int width, int height, unsigned int flags) 行 240	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+
+7.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glObjectLabel(RDCGLenum identifier, unsigned int name, int length, const char * label) 行 209	C++
+ 	renderdoc.dll!WrappedOpenGL::ActivateContext(GLWindowingData winData) 行 1596	C++
+ 	renderdoc.dll!eglMakeCurrent_renderdoc_hooked(void * display, void * draw, void * read, void * ctx) 行 492	C++
+ 	Simple_Texture2D.exe!esCreateWindow(ESContext * esContext, const char * title, int width, int height, unsigned int flags) 行 240	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+
+
+8.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glCreateShader(RDCGLenum type) 行 353	C++
+ 	renderdoc.dll!glCreateShader_renderdoc_hooked(RDCGLenum type) 行 157	C++
+ 	Simple_Texture2D.exe!esLoadShader(unsigned int type, const char * shaderSrc) 行 70	C
+ 	Simple_Texture2D.exe!esLoadProgram(const char * vertShaderSrc, const char * fragShaderSrc) 行 127	C
+ 	Simple_Texture2D.exe!Init(ESContext * esContext) 行 121	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+9.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glShaderSource(unsigned int shader, int count, const char * const * string, const int * length) 行 436	C++
+ 	renderdoc.dll!glShaderSource_renderdoc_hooked(unsigned int shader, int count, const char * const * string, const int * length) 行 157	C++
+ 	Simple_Texture2D.exe!esLoadShader(unsigned int type, const char * shaderSrc) 行 81	C
+ 	Simple_Texture2D.exe!esLoadProgram(const char * vertShaderSrc, const char * fragShaderSrc) 行 127	C
+ 	Simple_Texture2D.exe!Init(ESContext * esContext) 行 121	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+10.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glCompileShader(unsigned int shader) 行 491	C++
+ 	renderdoc.dll!glCompileShader_renderdoc_hooked(unsigned int shader) 行 157	C++
+ 	Simple_Texture2D.exe!esLoadShader(unsigned int type, const char * shaderSrc) 行 84	C
+ 	Simple_Texture2D.exe!esLoadProgram(const char * vertShaderSrc, const char * fragShaderSrc) 行 127	C
+ 	Simple_Texture2D.exe!Init(ESContext * esContext) 行 121	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+11.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glCreateProgram() 行 807	C++
+ 	renderdoc.dll!glCreateProgram_renderdoc_hooked() 行 157	C++
+ 	Simple_Texture2D.exe!esLoadProgram(const char * vertShaderSrc, const char * fragShaderSrc) 行 143	C
+ 	Simple_Texture2D.exe!Init(ESContext * esContext) 行 121	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+12.
+
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glAttachShader(unsigned int program, unsigned int shader) 行 568	C++
+ 	renderdoc.dll!glAttachShader_renderdoc_hooked(unsigned int program, unsigned int shader) 行 157	C++
+ 	Simple_Texture2D.exe!esLoadProgram(const char * vertShaderSrc, const char * fragShaderSrc) 行 151	C
+ 	Simple_Texture2D.exe!Init(ESContext * esContext) 行 121	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+
+13.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glLinkProgram(unsigned int program) 行 886	C++
+ 	renderdoc.dll!glLinkProgram_renderdoc_hooked(unsigned int program) 行 157	C++
+ 	Simple_Texture2D.exe!esLoadProgram(const char * vertShaderSrc, const char * fragShaderSrc) 行 157	C
+ 	Simple_Texture2D.exe!Init(ESContext * esContext) 行 121	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+14.
+
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glGenTextures(int n, unsigned int * textures) 行 143	C++
+ 	renderdoc.dll!glGenTextures_renderdoc_hooked(int n, unsigned int * textures) 行 157	C++
+ 	Simple_Texture2D.exe!CreateSimpleTexture2D(...) 行 78	C
+ 	Simple_Texture2D.exe!Init(ESContext * esContext) 行 127	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+
+15.
+>	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+ 	renderdoc.dll!WrappedOpenGL::glBindTexture(RDCGLenum target, unsigned int texture) 行 330	C++
+ 	renderdoc.dll!glBindTexture_renderdoc_hooked(RDCGLenum target, unsigned int texture) 行 157	C++
+ 	Simple_Texture2D.exe!CreateSimpleTexture2D(...) 行 81	C
+ 	Simple_Texture2D.exe!Init(ESContext * esContext) 行 127	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+
+16.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::Common_glTextureImage2DEXT(ResourceId texId, RDCGLenum target, int level, int internalformat, int width, int height, int border, RDCGLenum format, RDCGLenum type, const void * pixels) 行 2986	C++
+ 	renderdoc.dll!WrappedOpenGL::glTexImage2D(RDCGLenum target, int level, int internalformat, int width, int height, int border, RDCGLenum format, RDCGLenum type, const void * pixels) 行 3047	C++
+ 	renderdoc.dll!glTexImage2D_renderdoc_hooked(RDCGLenum target, int level, int internalformat, int width, int height, int border, RDCGLenum format, RDCGLenum type, const void * pixels) 行 157	C++
+ 	Simple_Texture2D.exe!CreateSimpleTexture2D(...) 行 84	C
+ 	Simple_Texture2D.exe!Init(ESContext * esContext) 行 127	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+17.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::Common_glTextureParameteriEXT(GLResourceRecord * record, RDCGLenum target, RDCGLenum pname, int param) 行 1867	C++
+ 	renderdoc.dll!WrappedOpenGL::glTexParameteri(RDCGLenum target, RDCGLenum pname, int param) 行 1910	C++
+ 	renderdoc.dll!glTexParameteri_renderdoc_hooked(RDCGLenum target, RDCGLenum pname, int param) 行 157	C++
+ 	Simple_Texture2D.exe!CreateSimpleTexture2D(...) 行 85	C
+ 	Simple_Texture2D.exe!Init(ESContext * esContext) 行 127	C
+ 	Simple_Texture2D.exe!esMain(ESContext * esContext) 行 200	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 283	C
+
+
+18.============================
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::BeginCaptureFrame() 行 3042	C++
+ 	renderdoc.dll!WrappedOpenGL::StartFrameCapture(void * dev, void * wnd) 行 2212	C++
+ 	renderdoc.dll!RenderDoc::StartFrameCapture(void * dev, void * wnd) 行 791	C++
+ 	renderdoc.dll!StartFrameCapture(void * device, void * wndHandle) 行 220	C++
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 95	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+
+19.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::StartFrameCapture(void * dev, void * wnd) 行 2219	C++
+ 	renderdoc.dll!RenderDoc::StartFrameCapture(void * dev, void * wnd) 行 791	C++
+ 	renderdoc.dll!StartFrameCapture(void * device, void * wndHandle) 行 220	C++
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 95	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+
+20.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glViewport(int x, int y, int width, int height) 行 1734	C++
+ 	renderdoc.dll!glViewport_renderdoc_hooked(int x, int y, int width, int height) 行 157	C++
+ 	Simple_Texture2D.exe!Draw(ESContext * esContext) 行 154	C
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 79	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+21.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glClear(unsigned int mask) 行 4535	C++
+ 	renderdoc.dll!glClear_renderdoc_hooked(unsigned int mask) 行 157	C++
+ 	Simple_Texture2D.exe!Draw(ESContext * esContext) 行 157	C
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 79	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+
+22.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glUseProgram(unsigned int program) 行 1359	C++
+ 	renderdoc.dll!glUseProgram_renderdoc_hooked(unsigned int program) 行 157	C++
+ 	Simple_Texture2D.exe!Draw(ESContext * esContext) 行 160	C
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 79	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+23.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glVertexAttribPointer(unsigned int index, int size, RDCGLenum type, unsigned char normalized, int stride, const void * pointer) 行 3640	C++
+ 	renderdoc.dll!glVertexAttribPointer_renderdoc_hooked(unsigned int index, int size, RDCGLenum type, unsigned char normalized, int stride, const void * pointer) 行 157	C++
+ 	Simple_Texture2D.exe!Draw(ESContext * esContext) 行 163	C
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 79	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+24.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+ 	renderdoc.dll!WrappedOpenGL::glEnableVertexAttribArray(unsigned int index) 行 4432	C++
+>	renderdoc.dll!glEnableVertexAttribArray_renderdoc_hooked(unsigned int index) 行 157	C++
+ 	Simple_Texture2D.exe!Draw(ESContext * esContext) 行 167	C
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 79	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+
+25.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glActiveTexture(RDCGLenum texture) 行 2584	C++
+ 	renderdoc.dll!glActiveTexture_renderdoc_hooked(RDCGLenum texture) 行 157	C++
+ 	Simple_Texture2D.exe!Draw(ESContext * esContext) 行 171	C
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 79	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+
+
+
+26.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glBindTexture(RDCGLenum target, unsigned int texture) 行 284	C++
+ 	renderdoc.dll!glBindTexture_renderdoc_hooked(RDCGLenum target, unsigned int texture) 行 157	C++
+ 	Simple_Texture2D.exe!Draw(ESContext * esContext) 行 174	C
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 79	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+
+27.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+ 	renderdoc.dll!WrappedOpenGL::glUniform1i(int location, int v0) 行 346	C++
+ 	renderdoc.dll!glUniform1i_renderdoc_hooked(int location, int v0) 行 157	C++
+>	Simple_Texture2D.exe!Draw(ESContext * esContext) 行 176	C
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 79	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+28.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glBindBuffer(RDCGLenum target, unsigned int buffer) 行 317	C++
+ 	renderdoc.dll!WrappedOpenGL::CopyClientMemoryArrays(int first, int count, int baseinstance, int instancecount, RDCGLenum indexType, const void * & indices) 行 1005	C++
+ 	renderdoc.dll!WrappedOpenGL::glDrawElements(RDCGLenum mode, int count, RDCGLenum type, const void * indices) 行 1495	C++
+ 	renderdoc.dll!glDrawElements_renderdoc_hooked(RDCGLenum mode, int count, RDCGLenum type, const void * indices) 行 157	C++
+ 	Simple_Texture2D.exe!Draw(ESContext * esContext) 行 177	C
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 79	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+
+29.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::glDrawElements(RDCGLenum mode, int count, RDCGLenum type, const void * indices) 行 1505	C++
+ 	renderdoc.dll!glDrawElements_renderdoc_hooked(RDCGLenum mode, int count, RDCGLenum type, const void * indices) 行 157	C++
+ 	Simple_Texture2D.exe!Draw(ESContext * esContext) 行 177	C
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 79	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+30.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::SwapBuffers(WindowingSystem winSystem, void * windowHandle) 行 2118	C++
+ 	renderdoc.dll!eglSwapBuffers_renderdoc_hooked(void * dpy, void * surface) 行 530	C++
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 80	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+31.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+ 	renderdoc.dll!WrappedOpenGL::ContextEndFrame() 行 2736	C++
+>	renderdoc.dll!WrappedOpenGL::EndFrameCapture(void * dev, void * wnd) 行 2254	C++
+ 	renderdoc.dll!RenderDoc::EndFrameCapture(void * dev, void * wnd) 行 814	C++
+ 	renderdoc.dll!EndFrameCapture(void * device, void * wndHandle) 行 234	C++
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 88	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+32.
+ 	renderdoc.dll!ResourceRecord::AddChunk(Chunk * chunk, __int64 ID) 行 402	C++
+>	renderdoc.dll!WrappedOpenGL::EndFrameCapture(void * dev, void * wnd) 行 2404	C++
+ 	renderdoc.dll!RenderDoc::EndFrameCapture(void * dev, void * wnd) 行 814	C++
+ 	renderdoc.dll!EndFrameCapture(void * device, void * wndHandle) 行 234	C++
+ 	Simple_Texture2D.exe!ESWindowProc(HWND__ * hWnd, unsigned int uMsg, unsigned __int64 wParam, __int64 lParam) 行 88	C
+ 	[外部代码]	
+ 	Simple_Texture2D.exe!WinLoop(ESContext * esContext) 行 241	C
+ 	Simple_Texture2D.exe!main(int argc, char * * argv) 行 290	C
+
+33.
+
+
+
+
+
+
+
+
+
+
+

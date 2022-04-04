@@ -1,6 +1,0 @@
-          CompressedDataStore &cd = m_Textures[texId].compressedData;
-          rdcarray<byte> &cdData = cd[level];
-          byte *dst = (byte *)cdData.data() + (cdData.size() / m_Textures[texId].depth) * zoffset;
-          for (int i = 0; i < height; ++i) {
-              memcpy(dst + (i + yoffset) * m_Textures[texId].width + xoffset, srcPixels + i * width, width);
-          }

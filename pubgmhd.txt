@@ -1,9 +1,0 @@
-<chunk id="1928" name="glFramebufferTexture2DMultisampleEXT" length="36" threadID="18446744072614111600" timestamp="12537774" duration="23">
-<ResourceId name="framebuffer" typename="GLResource" width="8" string="ResourceId::539">539</ResourceId>
-<enum name="target" typename="RDCGLenum" string="GL_FRAMEBUFFER">36160</enum>
-<enum name="attachment" typename="RDCGLenum" string="GL_COLOR_ATTACHMENT0">36064</enum>
-<enum name="textarget" typename="RDCGLenum" string="GL_TEXTURE_2D">3553</enum>
-<ResourceId name="texture" typename="GLResource" width="8" string="ResourceId::515">515</ResourceId>
-<int name="level" typename="int32_t" width="4">0</int>
-<int name="samples" typename="int32_t" width="4">2</int>
-</chunk>

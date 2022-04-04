@@ -1,0 +1,68 @@
+// add
+
+$adb shell gdbserver remote:1235 --attach 12400
+spawn the-true-adb shell
+xxxxx:/ # exec 'gdbserver' 'remote:1235' '--attach' '12400' 
+Attached; pid = 12400
+Listening on port 1235
+
+其中，remote表示adb连接的主机ip地址，即ubuntu的ip地址， 
+1235表示通讯的端口号，也可以写作其他端口号，需要保证端口号 没有被其他服务占用
+12400 表示 mediaserver进程号，表示我们要监听的服务是 mediaserver
+
+https://blog.csdn.net/u012188065/article/details/83785556
+
+
+/Android/Sdk/ndk/22.0.7026061/prebuilt/linux-x86_64/bin
+cd /data
+./gdbserver :1235 /data/test/main 127.0.0.1 9999 /data/test/001.txt
+
+adb forward tcp:1235 tcp:1235
+
+
+@ubuntu:bin# ./gdb
+GNU gdb (GDB) 8.3
+Copyright (C) 2019 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) target remote localhost:1235
+localhost:1235: .
+(gdb) target remote localhost:1235
+Remote debugging using localhost:1235
+Reading /data/test/main from remote target...
+warning: File transfers from remote targets can be slow. Use "set sysroot" to access files locally instead.
+Reading /data/test/main from remote target...
+Reading symbols from target:/data/test/main...
+Reading /system/bin/linker64 from remote target...
+Reading /system/bin/linker64 from remote target...
+Reading symbols from target:/system/bin/linker64...
+(No debugging symbols found in target:/system/bin/linker64)
+0x0000007fb7ec70d8 in __dl__start () from target:/system/bin/linker64
+(gdb) b main
+Breakpoint 1 at 0x5555555ae4: file main.cpp, line 18.
+(gdb) c
+Continuing.
+Reading /data/test/main from remote target...
+warning: .dynamic section for "target:/data/test/main" is not at the expected address (wrong library or version mismatch?)
+Reading /system/lib64/libc.so from remote target...
+Reading /system/lib64/libm.so from remote target...
+Reading /system/lib64/libstdc++.so from remote target...
+Reading /system/lib64/libdl.so from remote target...
+Reading /system/lib64/libnetd_client.so from remote target...
+Reading /system/lib64/libc++.so from remote target...
+
+Breakpoint 1, main (argc=4, argv=0x7ffffff848) at main.cpp:18
+18          if( argc <= 3 )
+(gdb)wh
+
